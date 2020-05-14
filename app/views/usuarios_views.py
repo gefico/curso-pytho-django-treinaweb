@@ -8,7 +8,7 @@ def cadastrar_usuarios(request):
         form_usuario = UserCreationForm(request.POST)
         if form_usuario.is_valid():
             form_usuario.save()
-            return redirect('listar_tarefas')
+            return redirect('logar_usuario')
     else:
         form_usuario = UserCreationForm()
     return render(request, 'usuarios/form_usuarios.html',{"form_usuario":form_usuario})
