@@ -1,30 +1,85 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>LISTA DE TAREFAS</title>
-    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Gerenciador de Tarefas</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="{% static 'app/img/mdb-favicon.ico' %}" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="{% static 'app/css/mdb.min.css' %}">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">GERENCIADOR DE TAREFAS</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+
+  <!-- Start your project here-->
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+  <!-- Navbar brand -->
+  <a class="navbar-brand" href="#">Tarefas</a>
+
+  <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'listar_tarefas' %}">Listar Tarefas</a>
+        <a class="nav-link" href="#">Home
+          <span class="sr-only">(current)</span>
+        </a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'deslogar_usuario' %}">Logout</a>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'listar_tarefas' %}">Lista de Tarefas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'deslogar_usuario' %}">Log out</a>
       </li>
     </ul>
+    <!-- Links -->
+
+    <form class="form-inline">
+      <div class="md-form my-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Buscar..." aria-label="Procurar">
+      </div>
+    </form>
   </div>
+  <!-- Collapsible content -->
+
 </nav>
-<main class="container">
-    {% block conteudo %}
-    {% endblock conteudo %}
-</main>
+<!--/.Navbar-->
+
+  <!-- End your project here-->
+
+    <main class="container">
+        {% block conteudo %}
+        {% endblock conteudo %}
+    </main>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="{% static 'app/js/jquery.min.js' %}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{% static 'app/js/popper.min.js' %}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static 'app/js/bootstrap.min.js' %}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{% static 'app/js/mdb.min.js' %}"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript"></script>
+</body>
+</html>
